@@ -4,7 +4,8 @@ import numpy as np
 
 
 # Class 
-class PLL():
+class varPLL():
+
 
     """
     This class contains the major methods associated to the single-phase PLLs.
@@ -43,26 +44,18 @@ class PLL():
 
                 if(item in kwargs.keys()):
                     self.__dict__[item] = np.append(self.__dict__[item],kwargs[item])
-   
+
+    
+
          
 
 
-    # Method for performng the computations
-    def  compute():
-        return "teste"
-
-    # SOGI algorithm
-    def __SOGI():
-        return "teste"
     
-    # SOGI_FLL algorithm
-    def __SOGI_FLL():
-        return "teste"
     
 
 
-# M
 
 
 
-teste = PLL('SOGI')
+
+teste = varPLL('SOGI')
