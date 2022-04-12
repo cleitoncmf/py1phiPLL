@@ -6,7 +6,7 @@
 Welcome to py1phiPLL's documentation!
 =====================================
 
-   Este é um exemplo de utilização do sphix para realizar a documentação.
+   Este é um exemplo de utilização do sphinx para realizar a documentação.
 
 .. toctree::
    :maxdepth: 2

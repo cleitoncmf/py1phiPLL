@@ -21,7 +21,7 @@ t_start = 0
 t_end = 0.1
 t = np.linspace(t_start,t_end,5000)
 y0 = [0.0, 0.0, 0.0]
-sol = solve_ivp(fun=SOGI_FLL,t_span=(t_start,t_end), y0=y0, t_eval=t, args=(v_in,sogi_fll_1), method='BDF')
+sol = solve_ivp(fun=SOGI_FLL,t_span=(t_start,t_end), y0=y0, t_eval=t, args=(v_in,sogi_fll_1), method='BDF', dense_output=True)
 
 
 # Plotting the results: v_in, v_alpha, v_beta
