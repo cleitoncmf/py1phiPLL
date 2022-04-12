@@ -8,7 +8,7 @@ class varPLL():
 
 
     """
-    This class contains the major methods associated to the single-phase PLLs.
+    This class describes objects used to store results of the different types of single-phase PLLs.
     """
     def __init__(self,type):
         if(type == "SOGI"):
@@ -48,14 +48,3 @@ class varPLL():
     
 
          
-
-
-    
-    
-
-
-
-
-
-
-teste = varPLL('SOGI')
