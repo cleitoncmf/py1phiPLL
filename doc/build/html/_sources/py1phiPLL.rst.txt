@@ -1,29 +1,29 @@
-py1phiPLL package
-=================
+Documentation
+=============
 
-Submodules
-----------
+.. Submodules
+.. ----------
 
-py1phiPLL.PLL module
---------------------
+.. py1phiPLL.PLL module
+.. --------------------
 
-.. automodule:: py1phiPLL.PLL
-   :members:
-   :undoc-members:
-   :show-inheritance:
+.. .. automodule:: py1phiPLL.PLL
+..    :members:
+..    :undoc-members:
+..    :show-inheritance:
 
-py1phiPLL.definitions module
-----------------------------
+.. py1phiPLL.definitions module
+.. ----------------------------
 
-.. automodule:: py1phiPLL.definitions
-   :members:
-   :undoc-members:
-   :show-inheritance:
+.. .. automodule:: py1phiPLL.definitions
+..    :members:
+..    :undoc-members:
+..    :show-inheritance:
 
-Module contents
----------------
+.. Module contents
+.. ---------------
 
-.. automodule:: py1phiPLL
-   :members:
-   :undoc-members:
-   :show-inheritance:
+.. .. automodule:: py1phiPLL
+..    :members:
+..    :undoc-members:
+..    :show-inheritance:
