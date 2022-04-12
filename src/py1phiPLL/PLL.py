@@ -6,6 +6,10 @@ import numpy as np
 # Function to represent the state equation of the SOGI 
 # v_in must be an anonimous function (lambda function)
 def SOGI(t,y,v_in,pll):
+
+    """
+    .. automodapi:: py1phiPLL.SOGI
+    """
      
     v_alpha, v_beta = y
   
@@ -26,6 +30,10 @@ def SOGI(t,y,v_in,pll):
 
 
 def SOGI_FLL(t,y,v_in,pll):
+
+    """
+    .. automodapi:: py1phiPLL.SOGI_FLL
+    """
 
     v_alpha, v_beta, wi = y
 
