@@ -3,8 +3,6 @@ message: "If you use this software, please cite it as below."
 authors:
   - family-names: Freitas
     given-names: Cleiton
-	email: cleiton.freitas@uerj.br
-	website: http://www.eng.uerj.br/prof/cleitoncmf
     orcid: https://orcid.org/0000-0002-6300-0521
 title: "Python Package for simulating single-phase PLLs"
 abstract: This package implements several single-phase PLLs so that they can be simulated using python integrators.
