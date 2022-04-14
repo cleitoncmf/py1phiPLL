@@ -4,16 +4,16 @@ authors:
   - family-names: Freitas
     given-names: Cleiton
 	email: cleiton.freitas@uerj.br
-	website: "http://www.eng.uerj.br/prof/cleitoncmf"
+	website: http://www.eng.uerj.br/prof/cleitoncmf
     orcid: https://orcid.org/0000-0002-6300-0521
 title: "Python Package for simulating single-phase PLLs"
 abstract: This package implements several single-phase PLLs so that they can be simulated using python integrators.
 version: 1.0.0
 doi: 
 date-released: 2022-14-04
-repository-code: "https://github.com/cleitoncmf/py1phiPLL"
+repository-code: https://github.com/cleitoncmf/py1phiPLL
 contact:
-  - affiliation: "Rio de Janeiro State University"
+  - affiliation: Rio de Janeiro State University
     email: cleiton.freitas@uerj.br
     family-names: Freitas
     given-names: Cleiton
