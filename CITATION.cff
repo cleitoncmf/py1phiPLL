@@ -8,7 +8,7 @@ title: "Python Package for simulating single-phase PLLs"
 abstract: This package implements several single-phase PLLs so that they can be simulated using python integrators.
 version: 1.0.0
 doi: 
-date-released: 2022-14-04
+date-released: "2022-14-04"
 repository-code: https://github.com/cleitoncmf/py1phiPLL
 contact:
   - affiliation: Rio de Janeiro State University
