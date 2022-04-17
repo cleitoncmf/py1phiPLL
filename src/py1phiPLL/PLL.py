@@ -86,7 +86,8 @@ def EPLL(y,t,v_in,pll):
 
 
 # SOGI-SRF-PLL
-def SOGI_SRF_PLL(y,t,v_in,pll):
+def SOGI_SRF_PLL(t,y,v_in,pll):
+
 
     theta, wi, A, v_alpha, v_beta = y
 
@@ -101,9 +102,9 @@ def SOGI_SRF_PLL(y,t,v_in,pll):
 
     # Processing
     y = A*np.sin(theta)
-    v_d = np.cos(theta)*v_alpha + np.sin(theta)*v_beta
+    v_d = np.cos(theta)*v_alpha + np.sin(theta)*v_beta 
     v_q = -np.sin(theta)*v_alpha + np.cos(theta)*v_beta
-  
+    
     w = wi + Kpf*v_d + w0
 
     e = v_in(t) - v_alpha
@@ -115,14 +116,23 @@ def SOGI_SRF_PLL(y,t,v_in,pll):
     d_A = - wc*(v_q + A)
 
     # Storing results
-    pll.store(t=t, e=e, w=w, y=y, A=A, wi=wi, theta=theta, v_alpha=v_alpha, v_beta=v_beta, v_d=v_d, v_q=v_q)
+    pll.t = np.append(pll.t,t)
+    pll.y = np.append(pll.y,y)
+    pll.A = np.append(pll.A,A)
+    pll.v_d = np.append(pll.v_d,v_d)
+    pll.v_q = np.append(pll.v_q,v_q)
+    pll.w = np.append(pll.w,w)
+    pll.wi = np.append(pll.wi,wi)
+    pll.theta = np.append(pll.theta,theta)
+    pll.e = np.append(pll.e,e)
+    pll.v_alpha = np.append(pll.v_alpha,v_alpha)
+    pll.v_beta = np.append(pll.v_beta,v_beta) 
 
-    
     return [d_theta, d_wi, d_A, d_v_alpha, d_v_beta]
 
 
 # APF-SRF-PLL
-def APF_SRF_PLL(y,t,v_in,pll):
+def APF_SRF_PLL(t,y,v_in,pll):
 
     theta, wi, A, v_sigma= y
 
@@ -132,25 +142,39 @@ def APF_SRF_PLL(y,t,v_in,pll):
     Kpf = pll.Kpf
     w0 = pll.w0
     wc = pll.wc
-  
+    
+
 
     # Processing
-    y = A*np.sin(theta)
-    v_d = np.cos(theta)*v_in(t) + np.sin(theta)*v_in_beta(t)
-    v_q = -np.sin(theta)*v_in(t) + np.cos(theta)*v_in_beta(t)
-  
-    w = wi + Kpf*v_d + w0
 
     v_alpha = v_in(t)
     v_beta = v_sigma - v_in(t) 
-  
+
+    y = A*np.sin(theta)
+    v_d = np.cos(theta)*v_alpha + np.sin(theta)*v_beta
+    v_q = -np.sin(theta)*v_alpha + np.cos(theta)*v_beta
+    
+    w = wi + Kpf*v_d + w0
+
+    
+    
     d_v_sigma = w*(v_in(t) - v_beta)
     d_theta = w
     d_wi = Kif*v_d
     d_A = - wc*(v_q + A)
 
     # Storing results
-    pll.store(t=t,  w=w, y=y, A=A, wi=wi, theta=theta, v_alpha=v_alpha, v_beta=v_beta, v_d=v_d, v_q=v_q, v_sigma=v_sigma)
-
+    pll.t = np.append(pll.t,t)
+    pll.y = np.append(pll.y,y)
+    pll.A = np.append(pll.A,A)
+    pll.v_d = np.append(pll.v_d,v_d)
+    pll.v_q = np.append(pll.v_q,v_q)
+    pll.w = np.append(pll.w,w)
+    pll.wi = np.append(pll.wi,wi)
+    pll.theta = np.append(pll.theta,theta)
+    
+    pll.v_alpha = np.append(pll.v_alpha,v_alpha)
+    pll.v_beta = np.append(pll.v_beta,v_beta) 
+    pll.v_sigma = np.append(pll.v_sigma,v_sigma) 
 
     return [d_theta, d_wi, d_A, d_v_sigma]
