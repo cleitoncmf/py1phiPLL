@@ -58,8 +58,8 @@ def SOGI_FLL(t,y,v_in,pll):
 # EPLL
 def EPLL(y,t,v_in,pll):
 
-    theta,wi,A = y
-
+    theta, wi, Amp = y
+    
 
     # stored constants
     Kia = pll.Kia
@@ -69,7 +69,7 @@ def EPLL(y,t,v_in,pll):
 
 
     # Processing
-    y = A*np.sin(theta)
+    y = Amp*np.sin(theta)
     e = v_in(t) - y
     ef = e*np.cos(theta)
     ea = e*np.sin(theta)
@@ -77,12 +77,12 @@ def EPLL(y,t,v_in,pll):
 
     d_theta = w
     d_wi = Kif*ef
-    d_A = Kia*ea
+    d_Amp = Kia*ea
 
     # Storing results
-    pll.store(t=t, e=e, w=w, y=y, A=A, ef=ef, ea=ea, wi=wi, theta=theta)
+    pll.store(t=t, e=e, w=w, y=y, A=Amp, ef=ef, ea=ea, wi=wi, theta=theta)
 
-    return [d_theta, d_wi, d_A]
+    return [d_theta, d_wi, d_Amp]
 
 
 # SOGI-SRF-PLL
