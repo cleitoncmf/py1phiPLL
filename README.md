@@ -1,4 +1,4 @@
-# py1phiPLL
+# py1phiPLL - Pacote para simulação de PLLs monofásicos em Python
 
 
 
